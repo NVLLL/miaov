@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js属性操作注意事项</title>
+    <script>
+        window.onload = function () {
+            var size = 15;
+            var arrInps = document.getElementsByTagName("input");
+            for (var i = 0; i < arrInps.length; i++) {
+                arrInps[i].onclick = changeSize;
+            }
+            function changeSize() {
+                var oP = document.getElementById("paragraph");
+                var flag = this.value;
+                if (flag == "+") {
+                    /*
+                    * JS 元素样式名称不允许出现"-"
+                        font-size       fontSize
+                        padding-top		paddingTop
+                        margin-left		marginLeft
+                    */
+                    oP.style.fontSize = ++size + "px";
+                } else if(flag == "-") {
+                    oP.style.fontSize = --size + "px";
+                } else {
+                    /*
+                     * class 是JS中的保留字
+                        oP.class = 'color';
+                        class => className
+                    */
+                    oP.className = "color";
+                }
+            }
+        }
+    </script>
+    <style>
+        .color {
+            width: 400px;
+            height: 300px;
+            border: 10px solid #08aaf5;
+            background: red;
+            color: #fff;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="+"></input>
+    <input type="button" value="-"></input>
+    <input type="button" value="红"></input>
+    <p id="paragraph">
+        妙味课堂是国内资深的前端开发培训机构,妙味课堂拥有系统的
+        JavaScript、HTML5、CSS3、移动开发、Node、webpack、
+        Vue、React、Angular 等课程,并录制成最系统的前端...
+        www.miaov.com/  - 百度快照 - 评
+    </p>
+</body>
+</html>

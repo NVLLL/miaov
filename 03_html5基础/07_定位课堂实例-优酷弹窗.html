@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .shade {
+            width: 100%;
+            height: 100%;
+            background: black;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.5; /* 标准滤镜0~1 */
+            filter: alpha(opacity=50);/* IE8下私有滤镜使用方法 */
+        }
+        .alert {
+            width: 400px;
+            height: 300px;
+            background: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;/* left和top偏移使得弹窗的左|上边居中了，盒子整体并没有居中 */
+            border: 2px solid blue;
+            margin-top: -152px;
+            margin-left: -202px;/* margin-top|left大小为负的盒子相应方向大小(top:300+4;left:400+4)的一半 */
+        }
+    </style>
+</head>
+<body>
+    如果有定位父级相对于定位父级发生偏移，没有定位父级相对于整个文档发生偏移<br/>
+    如果有定位父级相对于定位父级发生偏移，没有定位父级相对于整个文档发生偏移<br/>
+    如果有定位父级相对于定位父级发生偏移，没有定位父级相对于整个文档发生偏移<br/>
+    如果有定位父级相对于定位父级发生偏移，没有定位父级相对于整个文档发生偏移<br/>
+    如果有定位父级相对于定位父级发生偏移，没有定位父级相对于整个文档发生偏移<br/>
+    如果有定位父级相对于定位父级发生偏移，没有定位父级相对于整个文档发生偏移<br/>
+    如果有定位父级相对于定位父级发生偏移，没有定位父级相对于整个文档发生偏移<br/>
+    如果有定位父级相对于定位父级发生偏移，没有定位父级相对于整个文档发生偏移<br/>
+    如果有定位父级相对于定位父级发生偏移，没有定位父级相对于整个文档发生偏移<br/>
+    <div class="shade"></div><!-- 遮罩 -->
+    <div class="alert"></div>
+</body>
+</html>

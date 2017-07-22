@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,ul,p { margin: 0;padding: 0;}
+        li { list-style: none;}
+        img { vertical-align: top; width: 400px;height: 500px;}
+        .wrap {
+            width: 400px;
+            position: relative;
+            margin: 50px auto;
+            background: url("../imgs/04/loader_ico.gif") no-repeat center;
+        }
+        .wrap span,.wrap p {
+            position: absolute;
+            left: 0;
+            width: 400px;
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+            color: #fff;
+            font-size: 12px;
+            background: #333;
+        }
+        .wrap span { top: 0;}
+        .wrap p { bottom: 0;}
+        .wrap ul {
+            position: absolute;
+            top: 0;
+            right: -50px;
+        }
+        ul li {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 5px;
+            background: #666;
+        }
+        .active { background: #fc3;}
+    </style>
+    <script>
+        window.onload = function () {
+            // 初始化
+            var aImg = ["../imgs/04/1.png","../imgs/04/2.png","../imgs/04/3.png","../imgs/04/4.png"]
+            var oSpan = document.getElementsByTagName("span")[0];
+            var oImg =  document.getElementsByTagName("img")[0];
+            var oUl = document.getElementsByTagName("ul")[0];
+            var aLi = document.getElementsByTagName("li");/* 动态获取页面上的元素 */
+
+            oImg.src = aImg[0];
+            oSpan.innerText = "1 / " + aImg.length;
+            for (var i = 0; i < aImg.length; i++) {
+                oUl.innerHTML += "<li></li>";
+            }
+
+            if (aLi.length > 0) {
+                var initLi = aLi[0];
+                initLi.className = "active";
+
+                for(var i = 0; i < aLi.length; i++) {
+                    aLi[i].index = i;  /* 自定义属性 */
+                    /* 为每个li绑定单击事件 */
+                    aLi[i].onclick = function () {
+                        oSpan.innerText = (this.index + 1) + " / " + aImg.length;
+                        oImg.src = aImg[this.index];
+                        initLi.className = ""; /* 清空之前具有active样式的元素 */
+                        this.className = "active"; /* 给当前的添加active样式 */
+                        initLi = this;
+                    }
+                }
+
+            } else {
+                console.log("初始化失败！");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <img src="" alt="">
+        <span>图片正在加载中...</span>
+        <p>图片文字说明</p>
+        <ul></ul>
+    </div>
+</body>
+</html>

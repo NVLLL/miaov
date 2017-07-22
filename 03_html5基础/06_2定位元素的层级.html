@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1 {width: 100px;height: 100px;background: red;position: absolute;
+            z-index: 1;
+        }
+        .box2 {width: 200px; height: 200px; background: blue; position: relative;}
+        .box3 {width: 100px;height: 100px;background: green;}
+        /*
+            理论上box1绝对定位，脱离文档流，box2补上box1的位置，所以box1会叠压在box2上。
+            但实际上是box2完全遮住了box1，这是因为定位（绝对|相对）都会提升元素的层级，
+            写在后面的层级相对较高，但是默认都不超过1
+            可以通过z-index属性来控制定位元素的层级，z-index值越大层级越大
+        */
+    </style>
+</head>
+<body>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+</body>
+</html>

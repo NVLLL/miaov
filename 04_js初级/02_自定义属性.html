@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,ul {margin: 0;padding: 0;}
+        .wrap:after {content: "";display: block;clear: both;}
+        .clear {zoom: 1}
+        .wrap li {
+            list-style: none;
+            width: 114px;
+            height: 140px;
+            background: url("../imgs/04/normal.png") no-repeat;
+            float: left;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var aLi = document.getElementsByTagName("li");
+            for (var i = 0; i < aLi.length; i++) {
+                aLi[i].flag = true; /* 自定义属性 */
+
+                aLi[i].onclick = function () {
+                    /* 在单击事件函数中不能使用aLi[i],JS闭包变量作用域问题吧 */
+                    /* if (aLi[i].flag) {} */
+                    if (this.flag) {
+                        this.style.background = "url('../imgs/04/active.png')"
+                        this.flag = false;
+                    } else {
+                        this.style.background = "url('../imgs/04/normal.png')"
+                        this.flag = true;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul class="wrap clear">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

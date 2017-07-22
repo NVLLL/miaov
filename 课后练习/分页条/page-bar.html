@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分页条</title>
+    <style>
+        .box{
+            width: 628px;
+            height: 60px;
+            background: #e8e8e8;
+            margin: 50px auto;
+            text-align: center;
+            border: 1px solid #cdcdcd;
+        }
+        .box a {
+            text-decoration: none;
+            color: #333333;
+            font-size: 10px;
+            background: #fff;
+            display: inline-block;
+            padding: 0 9px 0 10px;
+            height: 28px;
+            line-height: 28px;
+            border: 1px solid #cdcdcd;
+
+        }
+        .box a:hover {
+            border: 1px solid red;
+            color: red;
+        }
+        .box .active {
+            font-weight: bold;
+            background: #fcf9ea;
+            cursor: text;
+        }
+        .box .active:hover {
+            color: #333333;
+            border: 1px solid #cdcdcd;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" >
+        <a href="#">返回</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">52</a>
+        <a href="#">60</a>
+        <a href="#">100</a>
+        <a href="#">255</a>
+        <a href="#">300...</a>
+        <a href="#">下一页</a>
+    </div>
+</body>
+</html>

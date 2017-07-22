@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,p,ul {margin: 0;padding: 0;}
+        li {list-style: none;}
+        .wrap {
+            margin: 50px auto;
+            width: 712px;
+            height: 400px;
+            background: #efefef;
+            padding-left: 25px;
+            padding-top: 20px;
+        }
+        .wrap p {
+            font-size: 24px;
+            font-weight: bold;
+            height: 40px;
+            line-height: 40px;
+            margin-bottom: 21px;
+        }
+        .wrap span {
+            display: inline-block;
+            width:100px;
+            font-size: 14px;
+            text-align: center;
+            color: #fff;
+            background: red;
+        }
+        .target {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #393129;
+            background: #fff;
+        }
+        .shade {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0px;
+            top: 0px;
+            background: black;
+            opacity: 0.5;
+            filter: alpha(opacity=50);
+            /*display: none;*/
+        }
+        .alert {
+            /*display: none;*/
+            width: 300px;
+            height: 196px;
+            border: 22px solid #9c949c;
+            background: #fff;
+            padding-top: 8px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -172px;
+            margin-top: -124px;
+        }
+        .alert ul {
+            margin-left: 34px;
+            font-size: 16px;
+        }
+        .alert li {
+            height: 32px;
+            padding-top: 10px;
+            line-height: 32px;
+        }
+        .alert .color_span {
+            display: inline-block;
+            padding: 0 12px;
+            height: 32px;
+            font-size: 12px;
+            text-align: center;
+            background: #9cce00;
+            color: #fff;
+            font-weight: bold;
+        }
+        .alert .color_y { background: #efbd00;}
+        .alert .color_b { background: #5a94ef;}
+        .alert .size_span {
+            display: inline-block;
+            height: 30px;
+            border: 1px solid #c0c0c0;
+            background: #efefef;
+            color: #848c8c;
+            padding: 0 7px;
+            font-size: 10px;
+            line-height: 30px;
+        }
+        .confirm_area {
+            padding-top: 22px;
+            text-align: center;
+            font-size: 16px;
+            color: #fff;
+        }
+        .confirm_area span {
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            background: #002952;
+            line-height: 30px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <p>请为下面的div设置样式：<span>点击设置</span></p>
+        <div class="target"></div>
+    </div>
+    <div class="shade"></div>
+    <div class="alert">
+        <ul class="opt">
+            <li>请选择文字颜色:
+                <span class="color_span">红</span>
+                <span class="color_span color_y">黄</span>
+                <span class="color_span color_b">蓝</span>
+            </li>
+            <li>请选择宽度(px):
+                <span class="size_span">200</span>
+                <span class="size_span">300</span>
+                <span class="size_span">400</span>
+            </li>
+            <li>请选择高度(px):
+                <span class="size_span">200</span>
+                <span class="size_span">300</span>
+                <span class="size_span">400</span>
+            </li>
+        </ul>
+        <div class="confirm_area">
+            <span id="restore">恢复</span>
+            <span id="sure">确定</span>
+        </div>
+    </div>
+</body>
+</html>

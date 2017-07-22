@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1 {
+            width: 500px;
+            height: 300px;
+            background: red;
+            overflow: hidden;
+        }
+        .box2 {
+            width: 300px;
+            height: 500px;  /* 1、父级元素包不住子级元素，解决办法是给父级加上overflo:hidden; */
+            background: blue;
+            position: relative;/*2、但是如果子级有定位属性，那么在IE6下父级的overflow:hidden;也不能包住子级*/
+            /* 3、解决办法是给父级也加上定位属性：position:relative; */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

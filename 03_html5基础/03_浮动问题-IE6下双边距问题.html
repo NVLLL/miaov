@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {margin: 0;}
+        .wrap {
+            border: 10px solid black;
+            float: left;
+        }
+        .box {
+            background: red;
+            width: 100px;
+            height: 100px;
+            margin: 0 100px;
+        }
+        /*
+            IE6下双边距问题:
+
+            在IE6下，块儿元素有浮动，并且有横向的margin，那么横向的margin会被放大成两倍
+            解决办法:将块儿元素转为inline
+        */
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

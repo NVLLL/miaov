@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1 { width: 300px;height: 300px;background: red;}
+        .box2 { width: 200px;height: 200px;background: blue;}
+        .box3 { width: 100px;height: 100px;background: green;}
+
+        .box1 { position: absolute;}
+        .box2 { position: relative;}
+        /*
+            绝对定位：
+                绝对定位是相对文档进行位置偏移的
+
+            body < html < 文档
+        */
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2">
+            <div class="box3">div3</div>
+        </div>
+    </div>
+</body>
+</html>
